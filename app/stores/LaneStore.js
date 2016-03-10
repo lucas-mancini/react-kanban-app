@@ -21,6 +21,28 @@ class LaneStore {
         });
     }
 
+    update(updatedLane) {
+        const lanes = this.lanes.map(lane => {
+            if(lane.id === updatedLane.id) {
+                return Object.assign({}, lane, updatedLane);
+            }
+
+            return lane;
+        });
+        
+        this.setState({
+            lanes
+        });
+    }
+
+    delete(id) {
+        const lanes = this.lanes.filter(lane => lane.id !== id);
+        
+        this.setState({
+            lanes
+        });
+    }
+
     attachToLane({noteId, laneId}) {
         const lanes = this.lanes.map(lane => {
             if(laneId === lane.id) {
