@@ -8,10 +8,6 @@ body {
     border: 1px solid #ccc;
 }
 
-.delete-note {
-
-}
-
 .notes {
     margin: 0.5em;
     padding-left: 0;
@@ -52,7 +48,7 @@ body {
     cursor: pointer;
 }
 
-.note:hover .delete-note {
+.note:hover .delete {
     visibility: visible;
 }
 
