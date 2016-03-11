@@ -31,9 +31,12 @@ const noteTarget = {
 }))
 export default class Note extends React.Component {
     render() {
-        const {connectDragSource, connectDropTarget, id, onMove, ...props} = this.props;
+        const {connectDragSource, connectDropTarget, isDragging,
+            id, onMove, editing,  ...props} = this.props;
 
-        return connectDragSource(connectDropTarget(
+        const dragSource = editing ? a => a : connectDragSource;
+
+        return dragSource(connectDropTarget(
             <li {...this.props}>{this.props.children}</li>
         ));
     }
