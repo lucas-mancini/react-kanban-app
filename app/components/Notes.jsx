@@ -4,13 +4,17 @@ import Note from './Note.jsx';
 
 export default ({notes, onValueClick, onEdit, onDelete}) => {
     var notesElements = notes.map(note => 
-                <Note className="note" key={note.id} className="note">
-                    <Editable
-                        editing={note.editing} 
-                        value={note.task} 
-                        onValueClick={onValueClick.bind(null, note.id)} 
-                        onEdit={onEdit.bind(null, note.id)} 
-                        onDelete={onDelete.bind(null, note.id)} />
+                <Note className="note" id={note.id} key={note.id}
+                    onMove={({sourceId, targetId}) =>
+                        console.log(`source: ${sourceId}, target: ${targetId}`)
+                }>
+                        <Editable
+                            editing={note.editing} 
+                            value={note.task} 
+                            onValueClick={onValueClick.bind(null, note.id)} 
+                            onEdit={onEdit.bind(null, note.id)} 
+                            onDelete={onDelete.bind(null, note.id)} 
+                        />
                 </Note> 
             );
         
