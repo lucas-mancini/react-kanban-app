@@ -24,7 +24,7 @@
     "node-uuid": "^1.4.7",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.13",
-    "webpack-dev-server": "^1.14.1",
+    "webpack-dev-server": "^3.1.11",
     "webpack-merge": "^0.7.3"
   },
   "dependencies": {
